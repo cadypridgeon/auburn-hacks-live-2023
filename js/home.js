@@ -42,3 +42,12 @@ for (let i = 0; i < flowers.length; i++) {
         }
     })
 }
+
+function page() {
+    var x = document.getElementsByClassName("page");
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
