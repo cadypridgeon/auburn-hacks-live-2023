@@ -1,0 +1,348 @@
+/* ---------- elements ---------- */
+
+@font-face {
+    font-family: 'Ragile';
+    src: url('assets/fonts/Ragile.woff') format('woff');
+}
+
+html {
+    --primary: #0C2B53;
+    --secondary: #3C5576;
+    --accent: #BC4415;
+    --link: #1D6B8A;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: 'Ragile', 'serif';
+}
+
+h3,
+h4,
+h5,
+body,
+button,
+a {
+    font-family: 'Poppins', 'sans-serif';
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    overflow-x: hidden;
+}
+
+
+/* ---------- styles ---------- */
+
+.title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 0.08rem;
+}
+
+.subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    letter-spacing: 0.04rem;
+}
+
+.heading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+}
+
+.subheading {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.67rem;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+}
+
+.caption {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.bold-body {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.body {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.primary {
+    color: var(--primary)
+}
+
+.primary-hover {
+    color: var(--primary);
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.primary-hover:hover {
+    color: var(--accent)
+}
+
+.secondary {
+    color: var(--secondary)
+}
+
+.accent {
+    color: var(--accent)
+}
+
+.hyperlink {
+    color: var(--link);
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.hyperlink:hover {
+    color: var(--accent)
+}
+
+.footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+}
+
+/* ---------- backgrounds ---------- */
+
+#home-bg {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(100% 197.75% at 100% 0%, #F4D9A8 0%, rgba(244, 217, 168, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+        , #FAECD2;
+}
+
+/* ---------- navbar ---------- */
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3em;
+    gap: 3em;
+    /* position: absolute; */
+    width: auto;
+    height: auto;
+    left: 0;
+    top: 0;
+    order: 0;
+}
+
+#logo {
+    width: 10vw;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#sections {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 1em;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 0;
+    gap: 3em;
+    width: 2em;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+a img {
+    display: flex;
+    transition: opacity .3s ease-in-out;
+    width: 2em;
+}
+
+a img:first-child {
+    position: absolute;
+    z-index: 2;
+}
+
+a img:last-child {
+    position: absolute;
+    z-index: 1;
+}
+
+a:hover img:first-child {
+    opacity: 0;
+}
+
+/* ---------- elements ---------- */
+.page {
+    display: flex;
+    /* position: absolute; */
+    width: 100vw;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4em;
+    gap: 4em;
+    /* position: absolute; */
+    width: 82vw;
+    height: 80vh;
+    top: 0;
+    order: 1;
+    overflow-y: scroll;
+}
+
+.space {
+    display: flex;
+    width: 1em;
+    height: 1em;
+    padding: 3em;
+}
+
+.subsection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 1em;
+    flex: none;
+    flex-grow: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+}
+
+/* ---------- home ---------- */
+
+.link {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* vertical-align: center; */
+    padding: 0;
+    gap: 2em;
+    flex: none;
+    flex-grow: 0;
+}
+
+.link-name {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    width: 12.5em;
+    flex: none;
+    flex-grow: 0;
+}
+
+.bullet {
+    display: flex
+}
+
+.flower {
+    width: 1.25em;
+    display: inline-block
+}
+
+.question {
+    display: inline-block;
+    /* padding-top: 1em; */
+    /* padding-bottom: 1em; */
+    padding-left: 1em;
+    transition: color .3s ease-in-out;
+}
+
+.question:hover {
+    color: var(--accent);
+    cursor: pointer
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-out;
+    padding-left: 2.25em;
+    /* padding-top: 1em; */
+    text-align: left;
+    color: var(--secondary);
+}
+
+.answer p {
+    /* padding-bottom: 1em; */
+    font-size: 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes spin-back {
+    0% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(0)
+    }
+}
