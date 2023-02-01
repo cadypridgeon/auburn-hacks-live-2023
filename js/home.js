@@ -49,10 +49,16 @@ let links = document.querySelectorAll('#nav a');
 let logo = document.getElementById('logo');
 let bg = document.getElementById('bg');
 let footer = document.getElementById('footer');
+// var home = "0";
+// localStorage.setItem("recent", home);
+var recent = localStorage.getItem("recent") || "0";
 
 for (let link of links) {
     window.addEventListener("load", function (e) {
-        links[0].click();
+        var num = parseInt(recent);
+        console.log(recent);
+        console.log(num);
+        links[num].click();
     });
 
     logo.addEventListener('click', function (e) {
@@ -75,7 +81,8 @@ for (let link of links) {
                 links[i].classList.add('primary-hover');
             }
         }
-        console.log(index)
+        var str = index.toString();
+        localStorage.setItem("recent", str);
         switch (index) {
             case 0:
                 bg.style.background = 'radial-gradient(100% 197.75% at 100% 0%, #F4D9A8 0%, rgba(244, 217, 168, 0) 100%), #FAECD2';

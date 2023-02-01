@@ -369,3 +369,55 @@ a:hover img:first-child {
         transform: rotate(0)
     }
 }
+
+/* ---------- schedule ---------- */
+#keys {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1em;
+    gap: 3em;
+}
+
+.key {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 1em;
+}
+
+.key #red {
+    width: 1.5em;
+    height: 1.5em;
+    background: #D73D24;
+    border-radius: .5em;
+}
+
+.key #orange {
+    width: 1.5em;
+    height: 1.5em;
+    background: #E96F3D;
+    border-radius: .5em;
+}
+
+.key #yellow {
+    width: 1.5em;
+    height: 1.5em;
+    background: #F6DFB4;
+    border-radius: .5em;
+}
+
+.key #green {
+    width: 1.5em;
+    height: 1.5em;
+    background: #83A9A1;
+    border-radius: .5em;
+}
+
+.key #blue {
+    width: 1.5em;
+    height: 1.5em;
+    background: #1D6B8A;
+    border-radius: .5em;
+}
