@@ -133,22 +133,20 @@ html {
     color: var(--accent)
 }
 
-.footer {
+#footer {
     position: absolute;
     width: 100vw;
     bottom: 0;
+    z-index: 10;
 }
 
 /* ---------- backgrounds ---------- */
 
-#home-bg {
+#bg {
     display: flex;
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(100% 197.75% at 100% 0%, #F4D9A8 0%, rgba(244, 217, 168, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-        , #FAECD2;
 }
 
 /* ---------- navbar ---------- */
@@ -172,9 +170,10 @@ html {
     flex: none;
     order: 0;
     flex-grow: 0;
+    cursor: pointer;
 }
 
-#sections {
+#nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -219,28 +218,48 @@ a:hover img:first-child {
 }
 
 /* ---------- elements ---------- */
-.page {
+#page {
     display: flex;
     /* position: absolute; */
     width: 100vw;
-    /* flex-wrap: wrap; */
     flex-direction: row;
     align-items: flex-start;
     padding: 0;
 }
 
+#sections {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
 .section {
     display: flex;
+    position: absolute;
     flex-direction: column;
     align-items: flex-start;
     padding: 4em;
+    margin: 0;
     gap: 4em;
-    /* position: absolute; */
-    width: 82vw;
+    width: inherit;
     height: 80vh;
     top: 0;
-    order: 1;
     overflow-y: scroll;
+    overflow-x: hidden;
+    animation: fade ease .8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .space {
@@ -268,6 +287,10 @@ a:hover img:first-child {
 }
 
 /* ---------- home ---------- */
+
+#home {
+    display: flex;
+}
 
 .link {
     display: flex;

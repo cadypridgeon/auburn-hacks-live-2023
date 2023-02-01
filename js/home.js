@@ -1,4 +1,5 @@
-// Credits: HackMIT 
+// credit to HackMIT for FAQ functions!
+// lines 5-45
 // https://hackmit.org/
 
 function open(question) {
@@ -43,11 +44,64 @@ for (let i = 0; i < flowers.length; i++) {
     })
 }
 
-function page() {
-    var x = document.getElementsByClassName("page");
-    if (x.style.display === "none") {
-        x.style.display = "flex";
-    } else {
-        x.style.display = "none";
-    }
+let sections = document.querySelectorAll('#sections .section');
+let links = document.querySelectorAll('#nav a');
+let logo = document.getElementById('logo');
+let bg = document.getElementById('bg');
+let footer = document.getElementById('footer');
+
+for (let link of links) {
+    window.addEventListener("load", function (e) {
+        links[0].click();
+    });
+
+    logo.addEventListener('click', function (e) {
+        links[0].click();
+    });
+
+    link.addEventListener('click', function (e) {
+        let index = Array.from(links).indexOf(e.target);
+        for (let section of sections) {
+            section.style.display = 'none';
+        }
+        sections[index].style.display = 'flex';
+        for (let i = 0; i < links.length; i++) {
+            if (i == index) {
+                links[i].classList.add('accent');
+                links[i].classList.remove('primary-hover');
+            }
+            else {
+                links[i].classList.remove('accent');
+                links[i].classList.add('primary-hover');
+            }
+        }
+        console.log(index)
+        switch (index) {
+            case 0:
+                bg.style.background = 'radial-gradient(100% 197.75% at 100% 0%, #F4D9A8 0%, rgba(244, 217, 168, 0) 100%), #FAECD2';
+                footer.src = "./assets/images/footer-yellow.svg";
+                break;
+            case 1:
+                bg.style.background = '#E6F3F4';
+                footer.src = "./assets/images/footer-teal.svg";
+                break;
+            case 2:
+                bg.style.background = 'radial-gradient(100% 197.75% at 100% 0%, rgba(131, 169, 161, 0.5) 0%, rgba(215, 229, 218, 0) 100%), #EAF0EE';
+                footer.src = "./assets/images/footer-green.svg";
+                break;
+            case 3:
+                bg.style.background = 'radial-gradient(100% 197.75% at 100% 0%, rgba(236, 165, 110, 0.5) 0%, rgba(236, 165, 110, 0) 100%), #FBEDE2';
+                footer.src = "./assets/images/footer-orange.svg";
+                break;
+            case 4:
+                bg.style.background = 'radial-gradient(100% 197.75% at 100% 0%, rgba(51, 140, 154, 0.5) 0%, rgba(205, 230, 234, 0) 100%), #E6F3F4';
+                footer.src = "./assets/images/footer-blue.svg";
+                break;
+            default:
+                bg.style.background = 'radial-gradient(100% 197.75% at 100% 0%, #F4D9A8 0%, rgba(244, 217, 168, 0) 100%), #FAECD2';
+                footer.src = "./assets/images/footer-yellow.svg";
+        }
+
+
+    });
 }
