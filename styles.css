@@ -133,11 +133,19 @@ html {
     color: var(--accent)
 }
 
+.white {
+    color: #fff;
+}
+
+.center {
+    text-align: center;
+}
+
 #footer {
     position: absolute;
     width: 100vw;
     bottom: 0;
-    z-index: 10;
+    z-index: 11;
 }
 
 /* ---------- backgrounds ---------- */
@@ -232,6 +240,7 @@ a:hover img:first-child {
     position: relative;
     flex-grow: 1;
     flex-basis: 100%;
+    z-index: 10;
 }
 
 .section {
@@ -241,15 +250,24 @@ a:hover img:first-child {
     align-items: flex-start;
     padding: 4em;
     margin: 0;
-    gap: 4em;
     width: inherit;
     height: 80vh;
     top: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
     animation: fade ease .8s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+.wide {
+    gap: 4em;
+}
+
+.narrow {
+    gap: 1em;
+}
+
+.scroll {
+    overflow-y: scroll;
 }
 
 @keyframes fade {
@@ -377,6 +395,7 @@ a:hover img:first-child {
     align-items: flex-start;
     padding: 1em;
     gap: 3em;
+    width: inherit;
 }
 
 .key {
@@ -387,37 +406,221 @@ a:hover img:first-child {
     gap: 1em;
 }
 
-.key #red {
+.color {
     width: 1.5em;
     height: 1.5em;
-    background: #D73D24;
     border-radius: .5em;
 }
 
-.key #orange {
-    width: 1.5em;
-    height: 1.5em;
-    background: #E96F3D;
-    border-radius: .5em;
+.deadline {
+    /* background: #D73D24; */
+    background: #F5BAB3;
 }
 
-.key #yellow {
-    width: 1.5em;
-    height: 1.5em;
+.ceremony {
+    /* background: #ECA56E; */
+    background: #EFBF9A;
+}
+
+.event {
     background: #F6DFB4;
-    border-radius: .5em;
 }
 
-.key #green {
-    width: 1.5em;
-    height: 1.5em;
-    background: #83A9A1;
-    border-radius: .5em;
+.workshop {
+    /* background: #83A9A1; */
+    background: #B7CCC7;
 }
 
-.key #blue {
-    width: 1.5em;
-    height: 1.5em;
-    background: #1D6B8A;
-    border-radius: .5em;
+.talk {
+    /* background: #1D6B8A; */
+    background: #B3CDD6;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: row;
+    height: 55vh;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 1em;
+}
+
+table {
+    display: flex;
+    max-width: 100%;
+}
+
+tr:nth-child(even) th {
+    color: #8A99AD;
+}
+
+th,
+td {
+    padding: .5rem;
+}
+
+th {
+    font-size: 1rem;
+    color: var(--secondary);
+    border-top: thin dotted #8A99AD;
+}
+
+td {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    border-radius: 0.5rem;
+    transition: opacity 0.3s ease;
+    color: var(--primary);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+    width: 16em;
+}
+
+td:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
+}
+
+td.empty {
+    cursor: default;
+}
+
+td.empty:hover {
+    box-shadow: none;
+}
+
+td>span {
+    font-size: .8em;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    color: var(--secondary);
+}
+
+tr {
+    height: 4em;
+}
+
+.empty {
+    border-radius: 0;
+    color: var(--secondary);
+    border-top: thin dotted #8A99AD;
+}
+
+[id^=modal] {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+[id^=modal]:target {
+    display: block;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    animation: fade ease .5s;
+}
+
+.popup-overlay {
+    position: fixed;
+    z-index: 999;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #06080C;
+    opacity: 50%;
+}
+
+.popup-container {
+    position: fixed;
+    z-index: 9999;
+    width: 80%;
+    max-width: 40em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    padding: 4em;
+    background: #ECEEF1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.popup-close {
+    position: fixed;
+    top: 2em;
+    right: 4em;
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+}
+
+.tag {
+    padding: .5em 1em .5em 1em;
+    border-radius: 2em;
+}
+
+.tag.deadline {
+    background-color: #BC4415;
+}
+
+.tag.ceremony {
+    background-color: #ECA56E;
+}
+
+.tag.event {
+    background-color: #F6DFB4;
+}
+
+.tag.event {
+    background-color: #83A9A1;
+}
+
+.tag.talk {
+    background-color: #338C9A;
+}
+
+.tag.topic {
+    background-color: #E96F3D;
+}
+
+.tag.beginner {
+    background-color: #1D6B8A;
+}
+
+.tag.intermediate {
+    background-color: #1D6B8A;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
 }

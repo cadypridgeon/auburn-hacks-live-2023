@@ -112,3 +112,28 @@ for (let link of links) {
 
     });
 }
+
+let events = document.querySelectorAll('td');
+events.forEach(function (e) {
+    e.addEventListener("click", function () {
+        footer.style.zIndex = "9";
+        // footer.style.opacity = "0.3";
+        // console.log("9")
+    });
+});
+
+let closes = document.querySelectorAll('.popup-close');
+closes.forEach(function (e) {
+    e.addEventListener("click", function () {
+        footer.style.zIndex = "11";
+        console.log("11")
+    });
+});
+
+let overlays = document.querySelectorAll('.popup-overlay');
+overlays.forEach(function (e) {
+    e.addEventListener("click", function () {
+        footer.style.zIndex = "11";
+        console.log("11")
+    });
+});
