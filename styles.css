@@ -24,7 +24,9 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ol,
+li {
     margin: 0;
 }
 
@@ -478,7 +480,7 @@ td {
     color: var(--primary);
     cursor: pointer;
     transition: box-shadow 0.2s ease-in-out;
-    width: 16em;
+    width: 30em;
 }
 
 td:hover {
@@ -560,6 +562,7 @@ input[type=checkbox] {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    text-align: center;
 }
 
 .popup-close {
@@ -623,4 +626,123 @@ input[type=checkbox] {
     flex-direction: row;
     justify-content: center;
     gap: 1em;
+}
+
+/* ---------- prizes ---------- */
+.prizes {
+    display: flex;
+    /* position: absolute; */
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* padding: 8em; */
+    gap: 2em;
+    width: 75vw;
+}
+
+.prize {
+    display: flex;
+    width: 16em;
+    height: 8em;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.32) 100%);
+    border-radius: 1em;
+}
+
+/* ---------- challenges ---------- */
+.challenges {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2em;
+    width: 100%;
+    height: 80vw;
+    padding-bottom: 26em;
+}
+
+.challenge {
+    display: flex;
+    width: 24em;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 2em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.32) 100%);
+    border-radius: 1em;
+    transition: box-shadow 0.3s ease-in-out, scale 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.challenge:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
+    scale: 1.02;
+}
+
+/* ---------- sponsors ---------- */
+.sponsors {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2em;
+    height: 80vw;
+    width: 100%;
+}
+
+.sponsors .row {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.sponsor {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 2em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.32) 100%);
+    border-radius: 1em;
+    transition: box-shadow 0.3s ease-in-out, scale 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.sponsor:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4);
+    scale: 1.02;
+}
+
+.logo {
+    width: 100%;
+    max-width: 100%;
+    min-height: 8em;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 1em;
+    /* background-color: #0C2B53; */
+}
+
+#lm {
+    background-image: url(./assets/images/lm.svg);
+}
+
+#swri {
+    background-image: url(./assets/images/swri.svg);
+}
+
+#mcleod {
+    background-image: url(./assets/images/mcleod.svg);
 }
