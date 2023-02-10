@@ -933,7 +933,7 @@ input[type=checkbox] {
 
 .section-mobile .prize {
     display: flex;
-    width: 64vw;
+    width: 50vw;
     height: 8em;
     flex-direction: column;
     gap: 0.5em;
@@ -979,7 +979,7 @@ input[type=checkbox] {
 
 .section-mobile .challenge {
     display: flex;
-    width: 64vw;
+    width: 50vw;
     flex-direction: column;
     gap: 0.5em;
     align-items: flex-start;
@@ -1018,6 +1018,21 @@ input[type=checkbox] {
 .sponsor {
     display: flex;
     width: 100%;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 2em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.32) 100%);
+    border-radius: 1em;
+    transition: box-shadow 0.3s ease-in-out, scale 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.section-mobile .sponsor {
+    display: flex;
+    width: 50vw;
     flex-direction: column;
     gap: 0.5em;
     align-items: center;
